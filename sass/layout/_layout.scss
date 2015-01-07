@@ -1,0 +1,243 @@
+// Importer les fichiers scss partiels (avec _) afin de compiler le
+// fichier css final utile pour le thème
+// Activer compass via 
+// webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+
+
+
+html {
+ margin: 0;
+ padding: 0;
+}
+
+
+body {	
+    font-family: $TrebuchetFont;
+
+}
+
+ /*------------------------------------------------------*
+  *--------    CSS BLOCS     						 ----*
+  *------------------------------------------------------*/
+
+ 
+ //@include at-breakpoint ($mobile){}
+  //@include at-breakpoint ($desktop){}
+  //@include at-breakpoint ($tablet){}
+  
+// il faut utiliser pour un même bloc et pour chaque breakpoint 
+//soit span-columns pour partitionner un bloc
+//soit @include set-container-width(); pour utiliser la taille du conteneur parent
+// sinon problèmes dans la grille !
+ 
+/*-- LAYOUT PRINCIPAL --*/
+body .conteneur{
+    //Approche mobile-first,réglage pour mobile
+    @include container($total-columns, $tablet, $desktop);
+    background: transparent;
+    padding-top: 2em;  
+        #header{
+            //@include set-container-width();
+            clear: both;
+        }
+        .content-global{
+            @include set-container-width();
+            overflow: hidden;            
+        }
+        .content-inner{
+            @include set-container-width();
+            overflow: hidden;
+        }
+        .content-top{
+            @include set-container-width();
+            clear: both;        
+            .ariane{clear: both;}
+        }
+        .middle-content{
+            @include set-container-width();
+           // @include span-columns($mobile);
+           overflow: hidden;
+        }
+        .node-inner{
+            @include set-container-width();
+            overflow: hidden;
+        }
+        .content-bottom{@include set-container-width();}
+        .content-bottom-home{
+            //@include set-container-width();
+            overflow: hidden;
+            clear: both;       
+        }
+        
+            #left-content{}
+            #right-content{}
+            #footer{
+            //pas besoin de mixin car bloc prend toute la largeur
+            clear: both;
+            @include background-size;
+        }
+
+    @include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
+       @include set-container-width();
+        #header{
+            //pas besoin de mixin car bloc prend toute la largeur
+            
+        }
+        .content-global{
+            @include set-container-width();            
+        }
+        .content-inner{
+            @include set-container-width();               
+        } 
+        .content-top{@include set-container-width();}
+        .middle-content{
+            @include set-container-width();
+           // @include span-columns($tablet);
+        }
+        .node-inner{
+            //@include span-columns($tablet );
+            @include set-container-width();
+            
+        }
+        .content-bottom{@include set-container-width();}
+        .content-bottom-home{
+            //@include set-container-width();
+        }
+       
+        
+        #left-content{}
+        #right-content{}
+        #footer{
+            // @include set-container-width();
+            @include background-size(auto);
+        }
+
+    }
+    /*    //Dimensions pour les pc*/
+    @include at-breakpoint($desktop) {
+       @include set-container-width(); 
+         #header{
+            //pas besoin de mixin car bloc prend toute la largeur
+           
+        }
+        .content-global{
+            @include set-container-width();        
+            
+        }
+        .content-inner{
+            @include set-container-width();                           
+        }
+        .content-top{@include set-container-width();}
+        .middle-content{
+            @include set-container-width();
+            //@include span-columns($desktop);
+        }
+        .node-inner{  
+            //@include span-columns($desktop);
+            @include set-container-width();
+           
+        }                       
+        .content-bottom{@include set-container-width();}
+        .content-bottom-home{
+            //@include set-container-width();
+        }
+        
+       
+        #left-content{}
+        #right-content{}
+        #footer{
+            //@include set-container-width();
+            @include background-size(auto);
+        }
+
+    }
+}
+
+//Pour le dev, code visuel sur les blocs selon le breakpoint
+// à commenter ou supprimer pour la production
+
+body .conteneur{
+    //Approche mobile-first,réglage pour mobile
+    //@include susy-grid-background;
+    #header{}
+    .content-global{}
+    
+    #left-content{}
+    .content-inner{
+        //@include susy-grid-background;
+        background-color: #F29400;
+    .content-top{background-color: chocolate;}
+    .content-bottom{}
+    .content-bottom-home{}
+    }
+    .middle-content{background-color:deeppink;}
+    #right-content{}
+    #footer{background-color: firebrick;
+        }
+}   
+
+@include at-breakpoint($tablet) {/*   //Dimensions pour les tablettes*/
+    body .conteneur{
+        //@include susy-grid-background;
+        
+        #header{
+            //@include susy-grid-background;
+            background-color: sienna;
+        }
+        .content-global{}
+        .content-top{background-color: mistyrose;}
+        .content-inner{}
+        .middle-content{
+            background-color: #C8D215;
+        //@include susy-grid-background;
+        }
+        #left-content{}
+        #right-content{}
+        #footer{background-color: peachpuff;
+        }
+    }
+    @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    body .conteneur{
+        //@include susy-grid-background;
+        
+        #header{
+            //@include susy-grid-background;
+            background: seashell;}
+        .content-global{
+            ////@include susy-grid-background;
+             
+        }
+        .content-inner{
+        background-color: palevioletred;     
+        }
+        .middle-content{
+            background-color:yellow;
+            //@include susy-grid-background;
+        }
+        .content-top{background-color: yellow;}
+        .content-bottom{}
+        .content-bottom-home{}
+        #left-content{background: tomato;}
+        #right-content{background: violet;}
+        #footer{background-color: palegreen;
+        }
+    }
+}
+}
+
+
+
+//classe sur le bloc
+aside.content_top{
+ text-align: center;
+}
+.content-top-node{
+    background-color: #999;
+    margin: 0 auto;
+    padding: em(5px);  
+        }
+//Images RWD pour nodes
+.node-inner
+{
+    img,iframe,object,embed{@include adaptable-img;}
+    }

@@ -1,0 +1,143 @@
+
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       AG TEST GRID                   |
+|                                      |
+|--------------------------------------*/
+
+/**
+ * Styles for AG grids & Container
+ */
+
+.container {
+  background-color: #fbeecb;
+   @include container;
+   //@include susy-grid-background;
+   overflow: hidden;
+}
+
+.ag1, .ag3 {
+  background-color: #71dad2;
+}
+
+.ag2 {
+  background-color: #fae7b3;
+}
+
+.ag4,.ag5,.ag8,.ag9 {
+  background-color: #ee9e9c;
+}
+
+.ag6 {
+  background-color: #f09671;
+}
+
+.ag7 {
+  background-color: #f6d784;
+}
+
+.ag10 {
+  background-color: #ea9fc3;
+}
+
+/**
+ * Text Styles
+ */
+h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+.ag1 {
+      display: none;
+  // removes the left sidebar 
+
+  // Tells Susy that this portion should be used only in the large media query 
+  @include at-breakpoint($desktop) {
+    display: block;
+    // shows the left sidebar at the $large layout
+    @include span-columns(3,12);
+  }
+  
+}
+
+.ag3 {
+     // small layout
+  display: none;
+
+  // medium layout
+  @include at-breakpoint($tablet) {
+    display: block;
+    @include span-columns(2 omega, 8);
+  }
+
+  // large layout
+  @include at-breakpoint($desktop) {
+    @include span-columns(3 omega,12);
+  // The omega flag is set here to tell Susy that ag3 is the final column. 
+    // notice we don't need a display:block here because changes cascade from
+    //small to large in Susy. Since display block is declared in the medium layout, 
+    //the large layout will have the display:block property through inheritance. 
+  }
+  
+}
+.ag2 {
+    // small layout
+  @include span-columns(4, 4);
+  // overflow hidden is used to self clear children
+  overflow: hidden; 
+
+  // medium layout
+  @include at-breakpoint($tablet) {
+    @include span-columns(6, 8);
+  }
+
+  // large layout
+  @include at-breakpoint($desktop) {
+    @include span-columns(6,$desktop);
+  // Optionally, you can choose to include the context.
+  }
+    
+  
+}
+
+.ag4 {
+  // Specifying the context with 6
+  @include span-columns(3, 6);
+}
+
+.ag5 {
+  // Additionally, adding omega to signify the last column
+  @include span-columns(3 omega, 6);
+}
+
+.ag6 {
+  @include span-columns(2, 6);
+}
+
+.ag7 {
+  @include span-columns(4 omega, 6);
+  overflow: hidden;
+}
+
+.ag8 {
+  @include span-columns(2, 4);
+}
+
+.ag9 {
+  @include span-columns(2 omega, 4);
+}
+
+.ag10 {
+  // There is no need to use span columns on AG 10 since elements take up 100% of 
+  //the space by default in display block. In this case, we just have to make sure to clear the floats 
+  //from ag8 and ag9. 
+  clear: both;
+
+  // You can still use span-columns if you want to though. There's no fault in using that. 
+  @include span-columns(4, 4);
+}

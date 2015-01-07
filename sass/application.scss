@@ -1,0 +1,76 @@
+
+//Import de toutes les feuilles SCSS partielles dédiées.
+//Cette seule feuille est chargée par Drupal
+//Compass va compiler les partiels pour fabriquer cette feuille
+
+// Importer les fichiers scss partiels (avec _) afin de compiler le
+// fichier css final utile pour le thème
+// Activer compass via 
+// webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+
+/*---- VERSIONS ----
+--- 2013-05-10 ---
+compass (0.12.2)
+sass (3.2.12)
+susy (1.0.9)
+modular-scale (1.0.6)
+compass-recipes (0.3.0)
+zocial (0.0.3)
+---------------------*/
+
+//Reset des propriétés
+//@import "normalize";
+
+// Import de Compass
+@import "compass";
+
+//Import des plugins de Compass
+@import "susyone";// utiliser susyone si syntaxe ancienne(Susy v1),sinon susy pour utiliser v2
+@import 'modular-scale';
+//@import "recipes";//cause une erreur avec compass-recipes-0.3.0
+
+
+// Import des réglages susy
+@import "global/variables";
+
+
+// Import des styles et polices Provence Formation
+@import "global/typos";
+@import "global/style";
+@import "global/sub-nav";
+@import "global/mixins_custom";
+
+// Import des partiels du layout du thème Drupal
+
+@import "layout/layout";
+@import "layout/layout-nodes";
+@import "layout/layout-header";
+@import "layout/layout-footer";
+@import "layout/layout-defilant";
+
+@import "ui/maintenance";
+@import "ui/search";
+@import "ui/style-backoffice";
+
+
+
+// Import des partiels pour les node.tpl
+
+//Import Homepage - choisir quel layout utiliser
+
+//@import "content-type/frontpage-agtest";
+//@import "content-type/frontpage-pano";
+//@import "content-type/frontpage-verticalDroit";
+@import "content-type/frontpage-verticalGauche";
+//@import "content-type/frontpage-institutionnel";
+
+//@import "content-type/node-TYPE";
+@import "content-type/views";
+
+@import "content-type/page-lycee";
+@import "content-type/contenu-vdl";
+@import "content-type/page-pole";
+
+
+//developpement
+@import "content-type/page-agtest";
