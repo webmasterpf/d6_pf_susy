@@ -13,9 +13,24 @@
   a {
     color: #FFF;
     text-decoration: none;
+    font-size:x-small;
     &:hover {
       color: #000;
       text-decoration: underline;
     }
   }
 }
+
+/**-- style Custom Search --**/
+.headSearch {
+    .form-item > label{color: #DDD;font-family: $AristaFont;font-size: medium;}
+}
+a#retour_haut{
+        color: #5f5f6f;
+        text-decoration: none;
+        float: right;
+        padding:0.5em;
+        font-size:small;
+        &:hover{
+            color: #E85253;}
+    }

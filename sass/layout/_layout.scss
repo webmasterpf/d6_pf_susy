@@ -1,6 +1,6 @@
 // Importer les fichiers scss partiels (avec _) afin de compiler le
 // fichier css final utile pour le thème
-// Activer compass via 
+// Activer compilation compass via terminal SSH
 // webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
 
 
@@ -38,20 +38,21 @@ body .conteneur{
     padding-top: 2em;  
         #header{
             //@include set-container-width();
-            clear: both;
+            //clear: both;
+            
         }
         .content-global{
             @include set-container-width();
-            overflow: hidden;            
+            //overflow: hidden;            
         }
         .content-inner{
             @include set-container-width();
-            overflow: hidden;
+            //overflow: hidden;
         }
         .content-top{
             @include set-container-width();
             clear: both;        
-            .ariane{clear: both;}
+            .ariane .breadcrumb{display: none;}
         }
         .middle-content{
             @include set-container-width();
@@ -127,7 +128,10 @@ body .conteneur{
         .content-inner{
             @include set-container-width();                           
         }
-        .content-top{@include set-container-width();}
+        .content-top{@include set-container-width();
+        .ariane{clear: both;}
+        .ariane .breadcrumb{clear: both;}
+        }
         .middle-content{
             @include set-container-width();
             //@include span-columns($desktop);
@@ -240,4 +244,5 @@ aside.content_top{
 .node-inner
 {
     img,iframe,object,embed{@include adaptable-img;}
+    p{@include cesure-txt;}
     }

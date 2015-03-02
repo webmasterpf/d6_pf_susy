@@ -1,13 +1,14 @@
 # http://pioupioum.fr/developpement/compass-sass-rvm-bundler-gestion-projet.html
+# http://stackoverflow.com/questions/27822791/using-a-specific-ruby-version-rvm-and-bundler
 
-source :rubygems
+source 'https://rubygems.org'
 # commentaire:permet de specifier des versions pour les gems et ruby
 # ainsi qu'un gemset
-#ruby=ruby-1.9.3-p484 
+
 #ruby-gemset=starter-d6-susy
 
-ruby=ruby-1.9.3-p484 
-ruby-gemset=starter-d6-susy
+ruby '1.9.3'
+
 
 gem "compass", "0.12.2"
 gem "sass", "3.2.12"

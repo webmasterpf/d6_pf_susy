@@ -6,7 +6,7 @@
      <div id="bloc_stats">
          <p>V&eacute;rifier les codes pour les stats</p>
       <?php
-global $theme_path;
+$theme_path = drupal_get_path('theme', 'd6_pf_susy');
 include ($theme_path.'/js/code_stats.php');
 ?>
      </div>
@@ -15,7 +15,7 @@ include ($theme_path.'/js/code_stats.php');
        
     </section> <!-- /general OR /page -->
            <?php
-global $theme_path;
+$theme_path = drupal_get_path('theme', 'd6_pf_susy');
 include ($theme_path.'/includes/inc_responsivenav.php');
 ?>    
 	<?php print $closure ?>

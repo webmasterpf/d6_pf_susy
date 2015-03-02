@@ -8,9 +8,10 @@ function phptemplate_preprocess(&$vars, $hook)
       if (arg(0) == 'node')
       {
         $vars['template_files'][]  = 'page-' . $vars['node']->type;
+        //drupal_set_message('Template du node possible : page-'.$vars['node']->type,'status');
       }
       break;
-
+//drupal_set_message('Hors du case : page-'.$vars['node']->type,'status');
   }
 }
 ?>
@@ -28,14 +29,14 @@ $term = preg_replace('<code>\s+</code>', '<em>', trim($term));
   return ($NomTermeValide);
 }
 
-function starterd6_pf_rwd_preprocess_node(&$vars, $hook) {
+function d6_pf_susy_preprocess_node(&$vars, $hook) {
 //Partie regions dans node.tpl- ajoute les regions utiles au node.tpl
  $vars['pole_bloc_G'] = theme('blocks', 'pole_bloc_G');
  $vars['pole_bloc_C'] = theme('blocks', 'pole_bloc_C');
  $vars['pole_bloc_D'] = theme('blocks', 'pole_bloc_D');
- $vars['col_G1'] = theme('blocks', 'col_G1');
- $vars['col_G2'] = theme('blocks', 'col_G2');
- $vars['col_G3'] = theme('blocks', 'col_G3');
+ $vars['col_1'] = theme('blocks', 'col_1');
+ $vars['col_2'] = theme('blocks', 'col_2');
+ $vars['col_3'] = theme('blocks', 'col_3');
  //
 //Partie template node.tpl
 $node = $vars['node'];
@@ -86,14 +87,14 @@ function debug_print($var) {
 }
 
 //Webform "You have already submitted this form." message off - http://drupal.org/node/1096226
-function starterd6_pf_rwd_webform_view_messages($node, $teaser, $page, $submission_count, $limit_exceeded, $allowed_roles, $closed, $cached) {
+function d6_pf_susy_webform_view_messages($node, $teaser, $page, $submission_count, $limit_exceeded, $allowed_roles, $closed, $cached) {
   return theme_webform_view_messages($node, $teaser, $page, 0, $limit_exceeded, $allowed_roles, $closed, $cached);
 }
 ?>
 <?php
 // permet d'ouvrir en blank les fichiers uploadés via filefield
 //NE PAS OUBLIER DE CHANGER NOM DU THEME !!!
-function starterd6_pf_rwd_filefield_file($file) {
+function d6_pf_susy_filefield_file($file) {
   // Views may call this function with a NULL value, return an empty string.
   if (empty($file['fid'])) {
     return '';
@@ -145,7 +146,7 @@ function phptemplate_aggregator_block_item($item, $feed = 0) {
   return $output;
 }
 /**Enleve le lien en savoir plus - NE PAS OUBLIER DE CHANGER LE NOM DU THEME !!!___*/
-function starterd6_pf_rwd_more_link ($url, $title) {
+function d6_pf_susy_more_link ($url, $title) {
   if (stristr( $url, 'aggregator')) {
     return "";
   }

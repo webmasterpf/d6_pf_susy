@@ -38,6 +38,7 @@ zocial (0.0.3)
 @import "global/typos";
 @import "global/style";
 @import "global/sub-nav";
+@import "global/sub-nav-txt";
 @import "global/mixins_custom";
 
 // Import des partiels du layout du thème Drupal
@@ -67,6 +68,7 @@ zocial (0.0.3)
 //@import "content-type/node-TYPE";
 @import "content-type/views";
 
+@import "content-type/page-association";
 @import "content-type/page-lycee";
 @import "content-type/contenu-vdl";
 @import "content-type/page-pole";

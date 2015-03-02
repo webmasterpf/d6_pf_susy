@@ -82,6 +82,10 @@ h6, .h6 {
      
 }
 /*------------ PARAGRAPHES ---------------*/
+//Couleur texte site
+body{
+    p,li,strong{color:#33343D;}
+}
 //Vertical Rythm via compass
 .conteneur{
     p{@include leader();}

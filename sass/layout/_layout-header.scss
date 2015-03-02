@@ -5,6 +5,7 @@
 // Layout du header et de ses parties haute et basse (logique mobile first)
  //Imbrication à 100% (full nested)
  #header {
+     //overflow: hidden; //ce param casse me menu,il faut aussi l'enlever sur les elements content
      .headHaut {
          //@include span-columns($mobile);
          overflow: hidden; 
@@ -21,22 +22,27 @@
              //@include set-container-width;
          }
          .headSearch{}
-         .menuHead{clear: both;}
+         
      }                
-
+     .menuHead{}
      @include at-breakpoint($desktop) {/*    //Dimensions pour les pc*/
          .headHaut {
              .logoHead { @include span-columns(4,$desktop);}
              .menuImg {  @include span-columns(8 omega,$desktop);
-                         padding-top: 1em;
+                         padding-top: 1em;height: 5em;
              }
          }
          .headBas {
              .site-slogan{@include span-columns(5,$desktop);}
              .headSearch{@include span-columns(5 omega,$desktop);}
-             .menuHead{}
-         } 
+
+         }
+         .menuHead{
+             aside.menuDyn{@include span-columns($desktop);}
+         }
      }
+
+
      @include at-breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
          .headHaut {
              .logoHead { }
@@ -45,11 +51,14 @@
          .headBas {
              .site-slogan{@include span-columns(3,$tablet);}
              .headSearch{@include span-columns(4 omega,$tablet);}
-             .menuHead{}
-         }                
-     }
- }
+         }
+         .menuHead{
+             aside.menuDyn{@include span-columns($tablet);}
+         }
 
+     }
+ 
+ }//Fin Header
 
  //Pour le dev, code visuel sur les blocs selon le breakpoint
 // à commenter ou supprimer pour la production
@@ -59,7 +68,7 @@
         .logoHead { }
         .menuImg {  }
     }
-    .headBas {background: red;
+    .headBas {background: #606171;
               .site-slogan{}
               .headSearch{}
               .menuHead{}
@@ -71,7 +80,7 @@
             .logoHead { }
             .menuImg { background: #FFCCFF; }
         }
-        .headBas {background: #00CC99;
+        .headBas {background: #606171;
                   .site-slogan{}
                   .headSearch{}
                   .menuHead{}
@@ -96,14 +105,14 @@
 .headBas {
  //background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
   //  margin: em(5px) 0 0 0;
-  background: #cfd0d2 image-url('bg_menu_rp.gif') repeat-x top left;
+ background: #cfd0d2 image-url('bg_menu_rp.gif') repeat-x top left;
 }
 
 
 .headSearch {
   text-align: right;
   margin: em(2px) 0 0 0;
-  background: transparent image-url('bg_recherche.gif') no-repeat scroll em(160px) em(7px);
+  //background: transparent image-url('bg_recherche.gif') no-repeat scroll em(160px) em(7px);
   input[type=image]{
       vertical-align: middle;
   }
@@ -128,7 +137,13 @@
 .site-slogan {
   color: white;
   padding: em(3px) 0 0 em(4px);
- 
+  
+  @include at-breakpoint($mobile){
+      font-size: small;text-align: center;
+  }
+  @include at-breakpoint($desktop){
+      font-size: medium;
+  }
   a {
     text-decoration: none;
     color: white;

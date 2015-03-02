@@ -1,0 +1,32 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       PAGE ASSOCIATION               |
+|--------------------------------------*/
+
+h1.titre_page{
+    color: #EA703F;
+    @include cesure-txt;
+    @include at-breakpoint ($mobile){
+        text-align: center;
+    }
+    @include at-breakpoint ($desktop){
+        text-align: right;
+    }
+}
+//@include at-breakpoint ($tablet){}
+.page-association{
+    a{color: #D63E2A;
+      text-decoration: none;
+      font-weight: bold;
+      &:hover{text-decoration: underline;}
+    }
+    h2{color: #EA703F;padding: 0.2em;}
+    h3{color: #EA703F;padding: 0.2em;}
+    .centre-asso h3.block-title{color: #E2017B;}//centre-asso à ajouter dans block class
+    table{width: 98%;}
+    tbody{border: 0;}
+    table tr{border-bottom: 0.1em solid #EA703F;}
+}

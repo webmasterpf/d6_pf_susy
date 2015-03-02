@@ -7,6 +7,14 @@
     behavior: url(/sites/all/libraries/PIE/PIE.htc);
 }
 
+/*------- GESTION DU TEXTE -------------*/
+@mixin cesure-txt{
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
 /*------- EFFETS VISUELS GENERIQUES--------------*/
 @mixin ombrage {
     border: 5px solid #fff;
