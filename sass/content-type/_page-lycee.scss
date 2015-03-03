@@ -9,3 +9,63 @@
 //@include at-breakpoint ($mobile){}
 //@include at-breakpoint ($desktop){}
 //@include at-breakpoint ($tablet){}
+.page-lycee > div.content{ 
+    > p{
+        font-size: small;}
+    ul > li{font-size: small;}
+}
+
+aside.lycee-coordlogo{//ajouter la classe via block class
+                      a{
+                          color: #d63e2a;
+                          text-decoration:none;
+                      }
+                      &:hover{
+                          text-decoration:underline;
+                      }
+                      p{font-size: small;}
+}
+aside.lycee-coordlogo h2#logo_lpp{color: #EA703F;padding: em(2px);text-align: left;}
+
+aside.lycee-formation{//ajouter la classe via block class
+                      .table-formation, #table-acces{
+                          width: 98%;
+                          border: 0;
+                          text-align:right;
+                          margin: em(2px);
+                          border-collapse: inherit;
+                      }
+                      .table-formation .diplome, #table-acces tr.transport{
+                          text-transform: capitalize;
+                          color: black;
+                          font-weight: bold;
+                          border-bottom: em(1px) dotted gray;
+                          text-align:left;
+
+                      }
+                      .transport-detail{}
+                      .views-field-diplome a{
+                          color: gray;
+                          text-decoration: none;
+                          font-size: smaller;
+                          font-weight: 100;
+                      }
+                      .views-field-diplome a:hover{
+                          text-decoration: underline;
+                      }
+                      caption{
+                          color:black;
+                          font-weight:bold;
+                          text-align:left;
+                          text-transform:uppercase;
+                          font-size: small;
+                      }
+
+
+}
+
+
+#diapo-lycee {margin:0;display: block;}
+#diapo-lycee img{border: 2px solid #E85231;padding: 1px;}
+#gmap-lycee {height: 200px;width: 300px;display: block;margin: 20px 0;}
+#gmap-lycee iframe{border: 2px solid #00AAD2;padding: 1px;}

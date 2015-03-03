@@ -26,7 +26,14 @@ h1.titre_page{
     h2{color: #EA703F;padding: 0.2em;}
     h3{color: #EA703F;padding: 0.2em;}
     .centre-asso h3.block-title{color: #E2017B;}//centre-asso à ajouter dans block class
+    h4{color: #94127F;padding: em(2px);text-indent: em(3px);}
     table{width: 98%;}
     tbody{border: 0;}
     table tr{border-bottom: 0.1em solid #EA703F;}
+}
+div#col2.page-association > div.content{
+    border: 0;
+    @include at-breakpoint ($desktop){
+        border-left: em(1px) solid #02A7D5;
+    }
 }

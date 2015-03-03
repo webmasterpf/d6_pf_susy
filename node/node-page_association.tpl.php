@@ -31,12 +31,12 @@ include($theme_path .'/includes/inc_region_col_1.php');
 
             <div class="content">
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
-            </div>
-         <?php 
-  //$theme_path = drupal_get_path('theme', 'NOM_THEME');
-  $theme_path = drupal_get_path('theme', 'd6_pf_susy');
-include($theme_path .'/includes/inc_region_col_2.php');
-?>
+            
+         <?php
+                //$theme_path = drupal_get_path('theme', 'NOM_THEME');
+                $theme_path = drupal_get_path('theme', 'd6_pf_susy');
+                include($theme_path . '/includes/inc_region_col_2.php');
+                ?>
               
             <!--***********!!!!!!  EXEMPLE DE CHAMP CCK INCLUS AVEC CONDITION !!!!!!!!************ -->
             <?php if ($node->nom_du_champ[0]['view']): ?>
@@ -47,7 +47,7 @@ include($theme_path .'/includes/inc_region_col_2.php');
             
             <!-- retour haut selon resolution de l'ecran -->
           <a href="#header" id="retour_haut">Haut de page</a>
-          
+          </div><!--___/content___ -->
         </div> <!--___FIN COL2___ -->
  <!--______________COLONNE 3________________ -->
  <div id="col3" class="col3_layout_3_8_3 page-association">
