@@ -15,6 +15,11 @@
     -o-hyphens: auto;
     hyphens: auto;
 }
+
+/*-------- IMAGES ADAPTABLES -----------*/
+@mixin adaptable-img {
+    max-width: 100%;
+}
 /*------- EFFETS VISUELS GENERIQUES--------------*/
 @mixin ombrage {
     border: 5px solid #fff;

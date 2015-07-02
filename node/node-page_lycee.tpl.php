@@ -8,7 +8,19 @@
         <!--______________COLONNE 1________________ -->
      
         <div id="col1" class="col1_layout_5_3_4 page-lycee">
-            
+        
+            <?php if ($node->field_lycee_logocoordtxt[0]['view']): ?>
+      <span class="lycee-coordlogo">
+                 <?php  print $node->field_lycee_logocoordtxt[0]['view'] ?>
+      </span>
+             <?php endif; ?>    
+             
+       <br clear="all"/>      
+    <?php if ($node->field_lycee_form[0]['view']): ?>
+       <span class="lycee-formation">
+                 <?php  print $node->field_lycee_form[0]['view'] ?>
+      </span>
+             <?php endif; ?>
         
             <?php 
   //$theme_path = drupal_get_path('theme', 'NOM_THEME');
@@ -48,6 +60,21 @@ include($theme_path .'/includes/inc_region_col_2.php');
         </div> <!--___FIN COL2___ -->
  <!--______________COLONNE 3________________ -->
  <div id="col3" class="col3_layout_5_3_4 page-lycee">
+     
+     <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
+      <span class="diapo-lycee">
+                 <?php  print $node->field_diapo_lycee_type[0]['view'] ?>
+      </span>
+             <?php endif; ?>      
+             
+        
+             
+      <?php if ($node->field_lycee_gmap[0]['view']): ?>
+      <span class="gmap-lycee">
+                 <?php  print $node->field_lycee_gmap[0]['view'] ?>
+      </span>
+             <?php endif; ?>
+     
      
      <?php 
   //$theme_path = drupal_get_path('theme', 'NOM_THEME');

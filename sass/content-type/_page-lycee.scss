@@ -9,25 +9,34 @@
 //@include at-breakpoint ($mobile){}
 //@include at-breakpoint ($desktop){}
 //@include at-breakpoint ($tablet){}
+
+#col1.page-lycee{
+    @include at-breakpoint ($desktop){
+        border-right: em(1px) solid #DA5714;
+    }
+    
+}
 .page-lycee > div.content{ 
-    > p{
-        font-size: small;}
+    > p{font-size: small;}
     ul > li{font-size: small;}
 }
 
-aside.lycee-coordlogo{//ajouter la classe via block class
-                      a{
-                          color: #d63e2a;
-                          text-decoration:none;
-                      }
-                      &:hover{
-                          text-decoration:underline;
-                      }
-                      p{font-size: small;}
+.lycee-coordlogo{
+    //ajouter la classe via block class
+    p >  a{
+        color: #d63e2a;
+        text-decoration:none;
+        &:hover{
+        text-decoration:underline;
+    }
+    }
+    
+    p{font-size: small;}
+    h2#logo_lpp{color: #EA703F;padding: em(2px);text-align: left;}
 }
-aside.lycee-coordlogo h2#logo_lpp{color: #EA703F;padding: em(2px);text-align: left;}
 
-aside.lycee-formation{//ajouter la classe via block class
+
+.lycee-formation{//ajouter la classe via block class
                       .table-formation, #table-acces{
                           width: 98%;
                           border: 0;
@@ -43,6 +52,7 @@ aside.lycee-formation{//ajouter la classe via block class
                           text-align:left;
 
                       }
+                      .table-formation td{padding: 0;}
                       .transport-detail{}
                       .views-field-diplome a{
                           color: gray;
@@ -59,13 +69,43 @@ aside.lycee-formation{//ajouter la classe via block class
                           text-align:left;
                           text-transform:uppercase;
                           font-size: small;
+                          margin: 0 0 0 0.5em;
                       }
 
 
 }
 
+.lycee-illus-plan
+{//ajouter la classe via block class
+ table{
+     @include at-breakpoint ($desktop){
+         margin: 0 0 0 0.2em;
+     }
+ }
+ tbody{border: 0;}                  
+ img{border: em(2px) solid #E85231;padding: em(1px);}
+ iframe{border: em(2px) solid #00AAD2;padding: em(1px);}
+}
+.page-lycee{
+    span.diapo-lycee {
 
-#diapo-lycee {margin:0;display: block;}
-#diapo-lycee img{border: 2px solid #E85231;padding: 1px;}
-#gmap-lycee {height: 200px;width: 300px;display: block;margin: 20px 0;}
-#gmap-lycee iframe{border: 2px solid #00AAD2;padding: 1px;}
+        
+        img{@include adaptable-img;
+            border: em(2px) solid #E85231;padding: em(1px);
+            margin: 0.2em 0 0 0.2em;
+        
+        @include at-breakpoint ($desktop){
+            margin: 1.1em 0 0 0.2em;
+        }
+        }
+    }
+
+    span.gmap-lycee{
+        iframe{border: em(2px) solid #00AAD2;padding: em(1px);
+        @include at-breakpoint ($desktop){
+            margin: 1.1em 0 0 0.2em;
+        }
+        
+        }
+    } 
+}

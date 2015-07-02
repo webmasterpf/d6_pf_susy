@@ -54,6 +54,9 @@ body .conteneur{
             clear: both;        
             .ariane .breadcrumb{display: none;}
         }
+        .content-header{
+            @include set-container-width();
+        }
         .middle-content{
             @include set-container-width();
            // @include span-columns($mobile);

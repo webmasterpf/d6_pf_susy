@@ -35,11 +35,12 @@ zocial (0.0.3)
 
 
 // Import des styles et polices Provence Formation
+@import "global/mixins_custom";
 @import "global/typos";
 @import "global/style";
 @import "global/sub-nav";
 @import "global/sub-nav-txt";
-@import "global/mixins_custom";
+
 
 // Import des partiels du layout du thème Drupal
 
